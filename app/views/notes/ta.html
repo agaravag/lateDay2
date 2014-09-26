@@ -1,0 +1,27 @@
+<div data-ng-controller="taController">
+
+<h1>Input page</h1>
+
+
+  <div data-ng-repeat="note in notes">
+    <p>
+      <div data-ng-show="note.editing">
+        <input data-ng-model="note.noteBody"/>
+        <input data-ng-model="note.name"/>
+        <input data-ng-model="note.course"/>
+        <input data-ng-model="note.rtg1"/>
+        <input data-ng-model="note.rtg2"/>
+        <input data-ng-model="note.rtg3"/>
+        <input data-ng-model="note.note"/>
+        <button data-ng-click="saveNote(note)">Save Changes</button>
+      </div>
+
+      <div data-ng-hide="note.editing">
+        {{note.noteBody}} |||| {{note.name}} |||| {{note.course}} |||| {{note.rtg1}} 
+        |||| {{note.rtg2}} |||| {{note.rtg3}} |||| {{note.note}}
+        <button data-ng-click="editNote(note)">Edit Note</button>  
+        <button data-ng-click="deleteNote(note)">Delete Note</button>
+      </div>
+    </p>
+  </div>
+</div>  
